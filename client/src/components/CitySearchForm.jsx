@@ -1,11 +1,10 @@
-import { createRef, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export default function CitySearchForm() {
     const [cityName, setCityName] = useState()
     const [cityOptions, setCityOptions] = useState([])
     const [error, setError] = useState()
-    // const navigate = useNavigate()
 
     const navigate = useNavigate()
 
@@ -21,10 +20,12 @@ export default function CitySearchForm() {
 
     useEffect(() => {
         updateDatalist()
+    // eslint-disable-next-line
     }, [cityName])
 
     const handleSubmit = async e => {
         e.preventDefault()
+        setError(false)
 
         let response = await fetch(`http://127.0.0.1:8000/api/forecast/get-city-id/${cityName}`)
 
@@ -37,21 +38,19 @@ export default function CitySearchForm() {
         let json = await response.json()
         console.log(json.id)
 
-        // return navigate(`/forecast/${json.id}`)
-        // return redirect(`/forecast/${json.id}`)
         navigate(`/forecast/${json.id}`)
     }
 
     return (
-        <form className="form header__form form_horizontal">
-            <input type="text" className="form__input" placeholder="City" onChange={handleNameChange} list="city-datalist" />
-            <button className="form__button" onClick={handleSubmit}> Search </button>
+        <form className="form header__form form_horizontal form_search">
+            <input type="text" className="input form__input input_search" placeholder="City" onChange={handleNameChange} list="city-datalist" />
+            <button className="button form__button button_search" onClick={handleSubmit}> Search </button>
 
             <datalist id="city-datalist">
                 {cityOptions.map(option => <option value={option.title} key={option.id} />)}
             </datalist>
 
-            {error? <strong> {error} </strong> : null}
+            {error? <strong className="form__error"> {error} </strong> : null}
         </form>
     )
 }

@@ -5,23 +5,13 @@ import ForecastDay from './routes/DailyForecast';
 import CitySearchForm from './components/CitySearchForm';
 
 function App() {
-    // const router = createBrowserRouter([
-    //     {
-    //         path: '/',
-    //         element: <Root />
-    //     },
-    //     {
-    //         path: '/forecast/:cityId/',
-    //         element: <ForecastDay />
-    //     }
-    // ])
-
     return (
         <div className="App">
             <header className="header App__header">
                 <h2 className="header__title"> WeatherApp </h2>
                 <CitySearchForm />
             </header>
+            <hr />
 
             <main className="main App__main">
                 <Routes>
@@ -30,7 +20,7 @@ function App() {
                 </Routes>
             </main>
 
-            <footer className="App__footer">
+            <footer className="footer App__footer">
                 <div className="footer__info">
                     <a href=".">Terms and conditions</a>
                 </div>

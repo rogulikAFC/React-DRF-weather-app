@@ -8,7 +8,6 @@ export default function ForecastDay() {
     let [isLoading, setIsLoading] = useState(false)
     let {cityId} = useParams()
 
-    // const dateToString = date => `${date.getFullYear()}-${date.getMonth().toString().length === 1? '0' : null}${date.getMonth() + 1}-${date.getDate().toString().length === 1? '0' : ''}${date.getDate()}`
     const dateToString = date => `${date.getDate().toString().length === 1? '0' : ''}${date.getDate()}-${date.getMonth().toString().length === 1? '0' : null}${date.getMonth() + 1}-${date.getFullYear()}`
 
     const fetchForecast = async () => {
@@ -27,10 +26,12 @@ export default function ForecastDay() {
 
     useEffect(() => {
         fetchForecast()
+    // eslint-disable-next-line
     }, [])
 
     useEffect(() => {
         fetchForecast()
+    // eslint-disable-next-line
     }, [cityId])
 
     return (

@@ -1,0 +1,34 @@
+.weather-mini-card {
+    margin: 5px 15px;
+}
+
+.weather-mini-card__img-type {
+    width: 40px;
+    height: 40px;
+}
+
+.weather-mini-card__type-caption {
+    font-weight: 500;
+}
+
+.weather-mini-card__header {
+    margin-bottom: 7px;
+}
+
+.weather-mini-card__title {
+    font-weight: 600;
+}
+
+.weather-mini-card__temperature {
+    margin: 7px 0;
+}
+
+.weather-mini-card__fact-temperature {
+    font-weight: 500;
+}
+
+.weather-mini-card__feels-like-temperature {
+    margin-top: 3px;
+    text-align: right;
+    font-size: small;
+}

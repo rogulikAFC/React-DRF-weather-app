@@ -1,0 +1,37 @@
+.form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.input, .button {
+    border-style: solid;
+    border-radius: 10px;
+    padding: 2px 4px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.input_search {
+    border-radius: 10px 0 0 10px;
+    width: 180px;
+}
+
+.input_search:focus-visible {
+    outline: none;
+}
+
+.button {
+    padding: 2px 4px;
+}
+
+.button_search {
+    border-radius: 0 10px 10px 0;
+    background-color: #1D71F2;
+    border-color: #1D71F2;
+    color: white;
+}
+
+.form__error {
+    margin-left: 20px;
+    color: #E14D4A;
+}
